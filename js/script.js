@@ -10,9 +10,9 @@ app.listen(3000, function () {
 
 
 // API CALL: https://api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}
-// API KEY:  d871f7208e65caf916aac8be8dce0be6
+//
 app.get('/', (req, res)=>{
-    const url = 'https://api.openweathermap.org/data/2.5/weather?q=CALAPAN&appid=d871f7208e65caf916aac8be8dce0be6&units=metric';
+    const url = 'https://api.openweathermap.org/data/2.5/weather?q=CALAPAN&&units=metric';
 
     https.get(url, function(response){
         console.log(response.statusCode);
