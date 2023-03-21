@@ -22,14 +22,16 @@ app.get('/', (req, res)=>{
             const weatherData = JSON.parse(d);
 
             // console.log(weatherData);
+            const city = weatherData.name;
+            const country = weatherData.sys.country;
+            const temp = weatherData.main.temp;
+            const currentWeather = weatherData.weather[0].description;
 
-            console.log("City: " + weatherData.name + ', ' + weatherData.sys.country);
-            console.log('Temp: ' + weatherData.main.temp + ' Celsius');
-            console.log('Weather: ' + weatherData.weather[0].description);
+            res.send("<h1>The current weather in " + city + ', ' + country + ' is ' + currentWeather + ' with the temperature at ' + temp + ' degrees Celsius.</h1>');
         })
     });
 
-    res.send("server is up and running")
+    // res.send("server is up and running")
 })
 
 
